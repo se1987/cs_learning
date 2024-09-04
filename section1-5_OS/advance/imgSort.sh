@@ -45,4 +45,3 @@ for file in "$TARGET_DIR"/*; do
     fi
 
 done
-
