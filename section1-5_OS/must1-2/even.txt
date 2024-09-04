@@ -1,0 +1,33 @@
+#!/bin/bash
+
+function checkEvenOdd (){
+    echo "数字を入力してください(正の整数):"
+    read input
+
+    if [[ "$input" =~ ^[0-9]+$ ]]; then
+        if [ $((input % 2)) -eq 0 ]; then
+            echo "偶数です"
+        else
+            echo "奇数です"
+        fi
+    else
+        echo "有効な数字を入力してください"
+    fi
+}
+
+while true; do
+    checkEvenOdd	
+
+    while true; do
+        echo "続行しますか？ (yes/no)"
+        read continue
+
+        if [ "$continue" = "no" ]; then
+            exit 0
+        elif [ "$continue" = "yes" ]; then
+            break
+        else
+            echo "無効な入力です。yes または no を入力してください"
+        fi
+    done
+done
